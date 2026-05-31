@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTG 卡片查询</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f3ee;
+      --panel: #ffffff;
+      --text: #24211d;
+      --muted: #6e665c;
+      --line: #ded8ce;
+      --accent: #1c6b68;
+      --accent-strong: #134f4d;
+      --gold: #b58a2b;
+      --red: #9e392f;
+      --shadow: 0 18px 50px rgba(48, 39, 29, .13);
+      --radius: 8px;
+      font-family: Inter, "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(120deg, rgba(28, 107, 104, .12), transparent 36%),
+        linear-gradient(240deg, rgba(181, 138, 43, .16), transparent 34%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 30px 0 44px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      padding: 10px 0 22px;
+      border-bottom: 1px solid rgba(36, 33, 29, .12);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .68);
+      border-radius: 999px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .source-badge span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2f9d67;
+      box-shadow: 0 0 0 4px rgba(47, 157, 103, .15);
+    }
+
+    .search-panel {
+      margin: 24px 0 18px;
+      padding: 18px;
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      height: 52px;
+      padding: 0 16px 0 44px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--text);
+      background: var(--panel);
+      outline: none;
+      transition: border .16s ease, box-shadow .16s ease;
+    }
+
+    .search-box input:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(28, 107, 104, .14);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .primary-btn {
+      min-width: 118px;
+      height: 52px;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      transition: transform .16s ease, background .16s ease;
+    }
+
+    .primary-btn:hover {
+      background: var(--accent-strong);
+      transform: translateY(-1px);
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    select {
+      width: 100%;
+      height: 42px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      color: var(--text);
+      outline: none;
+    }
+
+    .quick-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: rgba(255, 255, 255, .75);
+      color: var(--muted);
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent-strong);
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      min-height: 34px;
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .sort-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(48, 39, 29, .08);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px rgba(48, 39, 29, .14);
+    }
+
+    .image-wrap {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 5 / 7;
+      background: #2f2b27;
+    }
+
+    .image-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-fallback {
+      padding: 18px;
+      color: #f5f3ee;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .card-body {
+      padding: 12px;
+    }
+
+    .card h2 {
+      margin: 0 0 7px;
+      font-size: 17px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .prices {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .price {
+      padding: 4px 7px;
+      border-radius: 999px;
+      background: #f1eee8;
+    }
+
+    .empty,
+    .loading,
+    .error {
+      padding: 34px;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .65);
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .error {
+      color: var(--red);
+      border-color: rgba(158, 57, 47, .35);
+    }
+
+    dialog {
+      width: min(920px, calc(100% - 24px));
+      border: 0;
+      border-radius: var(--radius);
+      padding: 0;
+      box-shadow: var(--shadow);
+    }
+
+    dialog::backdrop {
+      background: rgba(18, 16, 14, .55);
+    }
+
+    .modal {
+      display: grid;
+      grid-template-columns: minmax(240px, 330px) 1fr;
+      gap: 20px;
+      padding: 18px;
+      background: var(--panel);
+    }
+
+    .modal-img {
+      width: 100%;
+      border-radius: var(--radius);
+      background: #2f2b27;
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .modal h2 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .icon-btn {
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--text);
+    }
+
+    .rules {
+      white-space: pre-line;
+      line-height: 1.62;
+      margin: 14px 0;
+    }
+
+    .external {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      color: var(--accent-strong);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .external:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 780px) {
+      .shell {
+        width: min(100% - 20px, 1180px);
+        padding-top: 18px;
+      }
+
+      header,
+      .search-row,
+      .filters,
+      .modal {
+        grid-template-columns: 1fr;
+      }
+
+      .source-badge {
+        justify-self: start;
+      }
+
+      .status-bar {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .cards {
+        grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+        gap: 12px;
+      }
+
+      .card-body {
+        padding: 10px;
+      }
+
+      .card h2 {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <h1>MTG 卡片查询</h1>
+        <p class="subtitle">按名称、颜色、类型和赛制合法性检索万智牌卡片，点击卡片查看规则文本、版本、稀有度和价格。</p>
+      </div>
+      <div class="source-badge" title="数据来自 Scryfall 公开 API">
+        <span></span>
+        Scryfall API
+      </div>
+    </header>
+
+    <section class="search-panel" aria-label="查询条件">
+      <form id="searchForm">
+        <div class="search-row">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="query" name="query" type="search" autocomplete="off" placeholder="输入卡名、Oracle 文本或关键词，例如 Lightning Bolt">
+          </div>
+          <button class="primary-btn" type="submit">查询</button>
+        </div>
+
+        <div class="filters">
+          <div class="field">
+            <label for="color">颜色</label>
+            <select id="color" name="color">
+              <option value="">任意颜色</option>
+              <option value="c:w">白色 W</option>
+              <option value="c:u">蓝色 U</option>
+              <option value="c:b">黑色 B</option>
+              <option value="c:r">红色 R</option>
+              <option value="c:g">绿色 G</option>
+              <option value="c:c">无色</option>
+              <option value="c:m">多色</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="type">类型</label>
+            <select id="type" name="type">
+              <option value="">任意类型</option>
+              <option value="t:creature">生物</option>
+              <option value="t:instant">瞬间</option>
+              <option value="t:sorcery">法术</option>
+              <option value="t:artifact">神器</option>
+              <option value="t:enchantment">结界</option>
+              <option value="t:planeswalker">鹏洛客</option>
+              <option value="t:land">地</option>
+              <option value="t:battle">战役</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="format">赛制</label>
+            <select id="format" name="format">
+              <option value="">不限赛制</option>
+              <option value="f:standard">标准</option>
+              <option value="f:pioneer">薪传先驱</option>
+              <option value="f:modern">摩登</option>
+              <option value="f:legacy">薪传</option>
+              <option value="f:vintage">特选</option>
+              <option value="f:commander">指挥官</option>
+              <option value="f:pauper">纯铁</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="rarity">稀有度</label>
+            <select id="rarity" name="rarity">
+              <option value="">任意稀有度</option>
+              <option value="r:common">普通</option>
+              <option value="r:uncommon">非普通</option>
+              <option value="r:rare">稀有</option>
+              <option value="r:mythic">秘稀</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="quick-row" aria-label="快捷查询">
+          <button class="chip" type="button" data-query="dragon">Dragon</button>
+          <button class="chip" type="button" data-query="commander staple">Commander</button>
+          <button class="chip" type="button" data-query="draw a card">抓牌</button>
+          <button class="chip" type="button" data-query="mv=1">一费</button>
+          <button class="chip" type="button" data-query="new:art">最新画作</button>
+        </div>
+      </form>
+    </section>
+
+    <div class="status-bar">
+      <div id="status">输入条件后开始查询。</div>
+      <div class="sort-row">
+        <label for="sort">排序</label>
+        <select id="sort">
+          <option value="name">名称</option>
+          <option value="released">发行时间</option>
+          <option value="usd">美元价格</option>
+          <option value="edhrec">EDHREC 热度</option>
+        </select>
+      </div>
+    </div>
+
+    <section id="results" class="cards" aria-live="polite"></section>
+  </main>
+
+  <dialog id="cardDialog">
+    <div class="modal">
+      <div id="modalImage"></div>
+      <div>
+        <div class="modal-head">
+          <h2 id="modalTitle"></h2>
+          <button class="icon-btn" id="closeDialog" type="button" aria-label="关闭详情">×</button>
+        </div>
+        <div class="meta" id="modalMeta"></div>
+        <div class="rules" id="modalRules"></div>
+        <div class="meta" id="modalLegal"></div>
+        <a class="external" id="modalLink" target="_blank" rel="noreferrer">在 Scryfall 打开 ↗</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const form = document.querySelector("#searchForm");
+    const queryInput = document.querySelector("#query");
+    const results = document.querySelector("#results");
+    const statusText = document.querySelector("#status");
+    const sortSelect = document.querySelector("#sort");
+    const dialog = document.querySelector("#cardDialog");
+    const closeDialog = document.querySelector("#closeDialog");
+
+    const endpoint = "https://api.scryfall.com/cards/search";
+    const currency = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+
+    let currentCards = [];
+
+    function buildQuery() {
+      const text = queryInput.value.trim();
+      const parts = [];
+
+      if (text) {
+        parts.push(text.includes(":") || text.includes("=") ? text : `(${text})`);
+      }
+
+      ["color", "type", "format", "rarity"].forEach((id) => {
+        const value = document.querySelector(`#${id}`).value;
+        if (value) parts.push(value);
+      });
+
+      return parts.join(" ") || "type:creature";
+    }
+
+    function cardImage(card, size = "normal") {
+      if (card.image_uris) return card.image_uris[size] || card.image_uris.normal;
+      const face = card.card_faces?.find((item) => item.image_uris);
+      return face?.image_uris?.[size] || face?.image_uris?.normal || "";
+    }
+
+    function cardText(card) {
+      if (card.oracle_text) return card.oracle_text;
+      return card.card_faces?.map((face) => `${face.name}\n${face.oracle_text || ""}`).join("\n\n") || "暂无规则文本。";
+    }
+
+    function mana(card) {
+      return card.mana_cost || card.card_faces?.map((face) => face.mana_cost).filter(Boolean).join(" // ") || "";
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      })[char]);
+    }
+
+    function priceText(card) {
+      const usd = card.prices?.usd ? currency.format(Number(card.prices.usd)) : "无价格";
+      const eur = card.prices?.eur ? `€${card.prices.eur}` : "";
+      return [usd, eur].filter(Boolean);
+    }
+
+    function renderCards(cards) {
+      results.innerHTML = "";
+
+      if (!cards.length) {
+        results.className = "";
+        results.innerHTML = `<div class="empty">没有找到匹配的卡片。换个关键词或减少筛选条件试试。</div>`;
+        return;
+      }
+
+      results.className = "cards";
+      const fragment = document.createDocumentFragment();
+
+      cards.forEach((card) => {
+        const item = document.createElement("article");
+        item.className = "card";
+        item.tabIndex = 0;
+        item.setAttribute("role", "button");
+        item.setAttribute("aria-label", `查看 ${card.name} 详情`);
+
+        const image = cardImage(card);
+        const prices = priceText(card).map((price) => `<span class="price">${escapeHtml(price)}</span>`).join("");
+        const imageMarkup = image
+          ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(card.name)}">`
+          : `<div class="image-fallback">${escapeHtml(card.name)}<br>暂无图片</div>`;
+
+        item.innerHTML = `
+          <div class="image-wrap">
+            ${imageMarkup}
+          </div>
+          <div class="card-body">
+            <h2>${escapeHtml(card.name)}</h2>
+            <div class="meta">${escapeHtml(mana(card))} ${escapeHtml(card.type_line || "")}</div>
+            <div class="meta">${escapeHtml(card.set_name || "")} · ${escapeHtml(card.rarity || "")}</div>
+            <div class="prices">${prices}</div>
+          </div>
+        `;
+
+        item.addEventListener("click", () => openCard(card));
+        item.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openCard(card);
+          }
+        });
+
+        fragment.appendChild(item);
+      });
+
+      results.appendChild(fragment);
+    }
+
+    function sortCards() {
+      const mode = sortSelect.value;
+      const cards = [...currentCards];
+
+      cards.sort((a, b) => {
+        if (mode === "released") return b.released_at.localeCompare(a.released_at);
+        if (mode === "usd") return Number(b.prices?.usd || 0) - Number(a.prices?.usd || 0);
+        if (mode === "edhrec") return (a.edhrec_rank || 999999) - (b.edhrec_rank || 999999);
+        return a.name.localeCompare(b.name);
+      });
+
+      renderCards(cards);
+    }
+
+    async function searchCards() {
+      const q = buildQuery();
+      const params = new URLSearchParams({
+        q,
+        unique: "cards",
+        order: sortSelect.value,
+        include_extras: "false"
+      });
+
+      statusText.textContent = `正在查询：${q}`;
+      results.className = "";
+      results.innerHTML = `<div class="loading">正在从 Scryfall 获取卡片...</div>`;
+
+      try {
+        const response = await fetch(`${endpoint}?${params.toString()}`);
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.details || "查询失败。");
+        }
+
+        currentCards = data.data || [];
+        statusText.textContent = `找到 ${data.total_cards ?? currentCards.length} 张卡片，当前显示 ${currentCards.length} 张。`;
+        sortCards();
+      } catch (error) {
+        currentCards = [];
+        statusText.textContent = "查询遇到问题。";
+        results.className = "";
+        results.innerHTML = `<div class="error">${error.message}<br>如果你是直接打开本地文件，请确认当前网络可以访问 Scryfall。</div>`;
+      }
+    }
+
+    function openCard(card) {
+      const image = cardImage(card, "large");
+      document.querySelector("#modalImage").innerHTML = image
+        ? `<img class="modal-img" src="${image}" alt="${card.name}">`
+        : `<div class="image-wrap image-fallback">${card.name}<br>暂无图片</div>`;
+      document.querySelector("#modalTitle").textContent = card.name;
+      document.querySelector("#modalMeta").textContent = `${mana(card)} ${card.type_line || ""} · ${card.set_name || ""} · ${card.rarity || ""}`;
+      document.querySelector("#modalRules").textContent = cardText(card);
+
+      const legal = Object.entries(card.legalities || {})
+        .filter(([, value]) => value === "legal")
+        .map(([key]) => key)
+        .slice(0, 9)
+        .join("、");
+
+      document.querySelector("#modalLegal").textContent = legal ? `合法赛制：${legal}` : "没有常用赛制合法信息。";
+      document.querySelector("#modalLink").href = card.scryfall_uri;
+      dialog.showModal();
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      searchCards();
+    });
+
+    sortSelect.addEventListener("change", () => {
+      if (currentCards.length) searchCards();
+    });
+
+    document.querySelectorAll("[data-query]").forEach((button) => {
+      button.addEventListener("click", () => {
+        queryInput.value = button.dataset.query;
+        searchCards();
+      });
+    });
+
+    closeDialog.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    queryInput.value = "Lightning Bolt";
+    searchCards();
+  </script>
+</body>
+</html>
