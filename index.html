@@ -509,6 +509,7 @@
       <div class="sort-row">
         <label for="sort">排序</label>
         <select id="sort">
+          <option value="auto">相关度</option>
           <option value="name">名称</option>
           <option value="released">发行时间</option>
           <option value="usd">美元价格</option>
@@ -575,6 +576,29 @@
     function cardText(card) {
       if (card.oracle_text) return card.oracle_text;
       return card.card_faces?.map((face) => `${face.name}\n${face.oracle_text || ""}`).join("\n\n") || "暂无规则文本。";
+    }
+
+    function normalizeSearchText(value) {
+      return String(value).toLowerCase().replace(/\s+/g, " ").trim();
+    }
+
+    function relevanceScore(card) {
+      const text = queryInput.value.trim();
+
+      if (!text || text.includes(":") || text.includes("=")) return 0;
+
+      const query = normalizeSearchText(text);
+      const name = normalizeSearchText(card.name);
+      const faceNames = card.card_faces?.map((face) => normalizeSearchText(face.name)) || [];
+      const rules = normalizeSearchText(cardText(card));
+
+      if (name === query) return 0;
+      if (name.startsWith(query)) return 10;
+      if (faceNames.includes(query)) return 20;
+      if (faceNames.some((faceName) => faceName.startsWith(query))) return 30;
+      if (name.includes(query)) return 40;
+      if (rules.includes(query)) return 60;
+      return 100;
     }
 
     function mana(card) {
@@ -650,16 +674,22 @@
 
     function sortCards() {
       const mode = sortSelect.value;
-      const cards = [...currentCards];
+      const cards = currentCards.map((card, index) => ({ card, index }));
+
+      if (mode === "auto") {
+        cards.sort((a, b) => relevanceScore(a.card) - relevanceScore(b.card) || a.index - b.index);
+        renderCards(cards.map(({ card }) => card));
+        return;
+      }
 
       cards.sort((a, b) => {
-        if (mode === "released") return b.released_at.localeCompare(a.released_at);
-        if (mode === "usd") return Number(b.prices?.usd || 0) - Number(a.prices?.usd || 0);
-        if (mode === "edhrec") return (a.edhrec_rank || 999999) - (b.edhrec_rank || 999999);
-        return a.name.localeCompare(b.name);
+        if (mode === "released") return b.card.released_at.localeCompare(a.card.released_at);
+        if (mode === "usd") return Number(b.card.prices?.usd || 0) - Number(a.card.prices?.usd || 0);
+        if (mode === "edhrec") return (a.card.edhrec_rank || 999999) - (b.card.edhrec_rank || 999999);
+        return a.card.name.localeCompare(b.card.name);
       });
 
-      renderCards(cards);
+      renderCards(cards.map(({ card }) => card));
     }
 
     async function searchCards() {
