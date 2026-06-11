@@ -1,0 +1,149 @@
+{
+  "schema_version": 2,
+  "families": {
+    "counter": {
+      "label": "反击",
+      "scopes": {
+        "any_spell": "任意咒语",
+        "noncreature_spell": "非生物咒语",
+        "creature_spell": "生物咒语",
+        "instant_or_sorcery": "瞬间或法术",
+        "activated_ability": "起动式异能",
+        "triggered_ability": "触发式异能",
+        "spell_or_ability": "咒语或异能"
+      }
+    },
+    "remove": {
+      "label": "去除",
+      "scopes": {
+        "creature": "生物",
+        "artifact": "神器",
+        "enchantment": "结界",
+        "artifact_or_enchantment": "神器或结界",
+        "nonland_permanent": "非地永久物",
+        "permanent": "永久物"
+      }
+    },
+    "graveyard_hate": {
+      "label": "坟场互动",
+      "scopes": {
+        "target_card": "目标坟场牌",
+        "target_player_graveyard": "目标牌手坟场",
+        "all_graveyards": "所有坟场",
+        "shuffle_or_bottom": "洗回或置于牌库底",
+        "replacement_effect": "替代式坟场限制"
+      }
+    },
+    "prevent_casting": {
+      "label": "阻止施放",
+      "scopes": {
+        "opponents_spells_this_turn": "本回合对手不能施放咒语",
+        "target_player_spells_this_turn": "本回合目标牌手不能施放咒语",
+        "noncreature_spells": "非生物咒语",
+        "next_spell_only": "下一个咒语"
+      }
+    },
+    "redirect": {
+      "label": "改变目标",
+      "scopes": {
+        "spell_with_target": "有目标的咒语",
+        "ability_with_target": "有目标的异能"
+      }
+    },
+    "special": {
+      "label": "特殊互动",
+      "scopes": {
+        "oracle_win_stop": "阻止先知类获胜",
+        "lose_prevention": "防止失败或对手获胜",
+        "exile_stack": "放逐堆叠上的咒语"
+      }
+    }
+  },
+  "requirement_terms": {
+    "blue_card_in_hand": "需要手牌中有蓝牌可放逐",
+    "green_card_in_hand": "需要手牌中有绿牌可放逐",
+    "commander_in_play": "需要主将在场",
+    "not_your_turn": "需要不是自己的回合",
+    "controls_swamp": "需要操控沼泽",
+    "discard_from_hand": "需要从手牌弃掉此牌",
+    "opponent_cast_three_spells_this_turn": "需要对手本回合已经施放三个咒语",
+    "already_on_battlefield": "需要此牌已经在战场上"
+  },
+  "constraint_terms": {
+    "target_is_blue": "目标必须是蓝色",
+    "target_is_instant": "目标必须是瞬间",
+    "target_is_instant_sorcery_or_enchantment": "目标必须是瞬间、法术或结界",
+    "target_is_legendary": "目标必须是传奇咒语",
+    "target_is_nonblack": "目标必须不是黑色",
+    "target_has_target": "目标咒语或异能本身必须有目标",
+    "returns_to_hand": "效果是弹回手牌而不是消灭或放逐"
+  },
+  "win_types": {
+    "oracle_consult": {
+      "label": "塔萨的先知/协商类",
+      "answered_by": [
+        { "family": "counter", "scope": "creature_spell" },
+        { "family": "counter", "scope": "instant_or_sorcery" },
+        { "family": "counter", "scope": "triggered_ability" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "special", "scope": "oracle_win_stop" },
+        { "family": "special", "scope": "lose_prevention" },
+        { "family": "special", "scope": "exile_stack" }
+      ]
+    },
+    "breach_graveyard": {
+      "label": "冥界裂隙/坟场类",
+      "answered_by": [
+        { "family": "counter", "scope": "noncreature_spell" },
+        { "family": "counter", "scope": "instant_or_sorcery" },
+        { "family": "remove", "scope": "enchantment" },
+        { "family": "graveyard_hate", "scope": "*" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "special", "scope": "exile_stack" }
+      ]
+    },
+    "spell_combo": {
+      "label": "咒语组合技",
+      "answered_by": [
+        { "family": "counter", "scope": "noncreature_spell" },
+        { "family": "counter", "scope": "instant_or_sorcery" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "redirect", "scope": "spell_with_target" },
+        { "family": "special", "scope": "exile_stack" }
+      ]
+    },
+    "artifact_loop": {
+      "label": "神器循环",
+      "answered_by": [
+        { "family": "counter", "scope": "noncreature_spell" },
+        { "family": "remove", "scope": "artifact" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "special", "scope": "exile_stack" }
+      ]
+    },
+    "creature_board": {
+      "label": "生物/场面制胜",
+      "answered_by": [
+        { "family": "counter", "scope": "creature_spell" },
+        { "family": "remove", "scope": "creature" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "special", "scope": "lose_prevention" }
+      ]
+    },
+    "activated_combo": {
+      "label": "起动式异能组合技",
+      "answered_by": [
+        { "family": "counter", "scope": "activated_ability" },
+        { "family": "remove", "scope": "creature" },
+        { "family": "remove", "scope": "artifact" },
+        { "family": "redirect", "scope": "ability_with_target" }
+      ]
+    }
+  },
+  "cards": []
+}

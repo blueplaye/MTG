@@ -1,0 +1,3247 @@
+{
+  "generated_at": "2026-06-03T15:33:14.592759+00:00",
+  "source": {
+    "provider": "TopDeck.gg + Scryfall",
+    "days": 183,
+    "participant_min": 48,
+    "min_decks": 2,
+    "candidate_limit": 300,
+    "event_limit": 2
+  },
+  "top_level_tournament_count": 2,
+  "processed_tournament_count": 2,
+  "deck_count": 87,
+  "unique_card_count": 1223,
+  "scanned_card_count": 689,
+  "interaction_candidate_pool_count": 66,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "lookup_error_count": 1,
+  "lookup_errors": [
+    {
+      "name": "_____ Goblin",
+      "error": "not found in Scryfall Oracle Cards bulk data"
+    }
+  ],
+  "candidate_count": 66,
+  "candidates": [
+    {
+      "name": "Fierce Guardianship",
+      "scryfall_id": "f7f3dd95-bd14-4e0f-a388-444f9cf1b0dc",
+      "oracle_id": "d09c9cba-fdd2-479b-ad5d-d05181c3e3f9",
+      "deck_count": 63,
+      "appearance_rate": 0.724138,
+      "scryfall_uri": "https://scryfall.com/card/cmm/94/fierce-guardianship?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{U}",
+        "mana_value": 3.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "If you control a commander, you may cast this spell without paying its mana cost.\nCounter target noncreature spell.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "noncreature_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "U"
+          ]
+        },
+        {
+          "mode": "free",
+          "requires": [
+            "commander_in_play"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击非生物咒语"
+      ]
+    },
+    {
+      "name": "Mental Misstep",
+      "scryfall_id": "61e9c6df-1c84-4eab-9076-a4feb6347c10",
+      "oracle_id": "1a0770e6-b093-4439-baff-6889a50ba12e",
+      "deck_count": 63,
+      "appearance_rate": 0.724138,
+      "scryfall_uri": "https://scryfall.com/card/nph/38/mental-misstep?utm_source=api",
+      "base": {
+        "mana_cost": "{U/P}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "({U/P} can be paid with either {U} or 2 life.)\nCounter target spell with mana value 1.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell",
+          "limits": {
+            "mana_value": 1
+          }
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        },
+        {
+          "mode": "life_or_mana",
+          "colors": [
+            "U"
+          ],
+          "life": 2
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Pact of Negation",
+      "scryfall_id": "1ed4c0bb-b710-44a1-b8bc-6bd11c27b8b8",
+      "oracle_id": "f3e213a4-ba5a-468a-93b3-c0a34e1bd725",
+      "deck_count": 60,
+      "appearance_rate": 0.689655,
+      "scryfall_uri": "https://scryfall.com/card/tsr/77/pact-of-negation?utm_source=api",
+      "base": {
+        "mana_cost": "{0}",
+        "mana_value": 0.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target spell.\nAt the beginning of your next upkeep, pay {3}{U}{U}. If you don't, you lose the game.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Force of Will",
+      "scryfall_id": "89f612d6-7c59-4a7b-a87d-45f789e88ba5",
+      "oracle_id": "956381ba-6d37-4a8a-846c-bad79222dbee",
+      "deck_count": 59,
+      "appearance_rate": 0.678161,
+      "scryfall_uri": "https://scryfall.com/card/dmr/50/force-of-will?utm_source=api",
+      "base": {
+        "mana_cost": "{3}{U}{U}",
+        "mana_value": 5.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "You may pay 1 life and exile a blue card from your hand rather than pay this spell's mana cost.\nCounter target spell.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 3,
+          "colors": [
+            "U",
+            "U"
+          ]
+        },
+        {
+          "mode": "pitch",
+          "requires": [
+            "blue_card_in_hand"
+          ],
+          "life": 1
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Mindbreak Trap",
+      "scryfall_id": "4f51140b-6254-431a-8810-94307bfdfbbe",
+      "oracle_id": "48712d36-5c13-4ded-87a4-68106da4a5cd",
+      "deck_count": 57,
+      "appearance_rate": 0.655172,
+      "scryfall_uri": "https://scryfall.com/card/zen/57/mindbreak-trap?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{U}{U}",
+        "mana_value": 4.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant — Trap",
+        "oracle_text": "If an opponent cast three or more spells this turn, you may pay {0} rather than pay this spell's mana cost.\nExile any number of target spells.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "special",
+          "scope": "exile_stack"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "U",
+            "U"
+          ]
+        },
+        {
+          "mode": "free",
+          "requires": [
+            "opponent_cast_three_spells_this_turn"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "放逐堆叠上的咒语"
+      ]
+    },
+    {
+      "name": "Silence",
+      "scryfall_id": "1c2b13b1-31f0-4676-88a7-53f3a190e9a2",
+      "oracle_id": "8aed54cb-d1bb-45ad-adbe-38e55d84ff31",
+      "deck_count": 48,
+      "appearance_rate": 0.551724,
+      "scryfall_uri": "https://scryfall.com/card/m14/35/silence?utm_source=api",
+      "base": {
+        "mana_cost": "{W}",
+        "mana_value": 1.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Your opponents can't cast spells this turn.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "prevent_casting",
+          "scope": "opponents_spells_this_turn"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "限制对手本回合施放咒语"
+      ]
+    },
+    {
+      "name": "Boseiju, Who Endures",
+      "scryfall_id": "2135ac5a-187b-4dc9-8f82-34e8d1603416",
+      "oracle_id": "bf1341dd-41a3-49f6-87ec-63170dde4324",
+      "deck_count": 43,
+      "appearance_rate": 0.494253,
+      "scryfall_uri": "https://scryfall.com/card/neo/266/boseiju-who-endures?utm_source=api",
+      "base": {
+        "mana_cost": "",
+        "mana_value": 0.0,
+        "colors": [],
+        "color_identity": [
+          "G"
+        ],
+        "type_line": "Legendary Land",
+        "oracle_text": "{T}: Add {G}.\nChannel — {1}{G}, Discard this card: Destroy target artifact, enchantment, or nonbasic land an opponent controls. That player may search their library for a land card with a basic land type, put it onto the battlefield, then shuffle. This ability costs {1} less to activate for each legendary creature you control.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "artifact_or_enchantment"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "channel",
+          "generic": 1,
+          "colors": [
+            "G"
+          ],
+          "requires": [
+            "discard_from_hand"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "channel",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "处理神器或结界"
+      ]
+    },
+    {
+      "name": "Chain of Vapor",
+      "scryfall_id": "38f741bf-13ee-4384-98ab-27833ebb9f6d",
+      "oracle_id": "2167ac25-d042-4b48-b770-8b94acc1a965",
+      "deck_count": 42,
+      "appearance_rate": 0.482759,
+      "scryfall_uri": "https://scryfall.com/card/c16/84/chain-of-vapor?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Return target nonland permanent to its owner's hand. Then that permanent's controller may sacrifice a land of their choice. If the player does, they may copy this spell and may choose a new target for that copy.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent",
+          "constraints": [
+            "returns_to_hand"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "弹回非地永久物"
+      ]
+    },
+    {
+      "name": "An Offer You Can't Refuse",
+      "scryfall_id": "a829747f-cf9b-4d81-ba66-9f0630ed4565",
+      "oracle_id": "234a734b-ba28-4f1b-9d01-3c3e7d516590",
+      "deck_count": 41,
+      "appearance_rate": 0.471264,
+      "scryfall_uri": "https://scryfall.com/card/fdn/160/an-offer-you-cant-refuse?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target noncreature spell. Its controller creates two Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "noncreature_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击非生物咒语"
+      ]
+    },
+    {
+      "name": "Force of Negation",
+      "scryfall_id": "1825a719-1b2a-4af9-9cd2-7cb497cd0317",
+      "oracle_id": "ac2173f9-f223-440a-9231-fd98762bdc6f",
+      "deck_count": 34,
+      "appearance_rate": 0.390805,
+      "scryfall_uri": "https://scryfall.com/card/2x2/50/force-of-negation?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{U}{U}",
+        "mana_value": 3.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "If it's not your turn, you may exile a blue card from your hand rather than pay this spell's mana cost.\nCounter target noncreature spell. If that spell is countered this way, exile it instead of putting it into its owner's graveyard.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "noncreature_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "U",
+            "U"
+          ]
+        },
+        {
+          "mode": "pitch",
+          "requires": [
+            "blue_card_in_hand"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击非生物咒语"
+      ]
+    },
+    {
+      "name": "Ranger-Captain of Eos",
+      "scryfall_id": "af3928b4-813a-4120-8799-de34235d60ac",
+      "oracle_id": "cada3481-cc2b-4412-b9b5-0436af53aad2",
+      "deck_count": 34,
+      "appearance_rate": 0.390805,
+      "scryfall_uri": "https://scryfall.com/card/mh1/21/ranger-captain-of-eos?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{W}{W}",
+        "mana_value": 3.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Creature — Human Soldier Ranger",
+        "oracle_text": "When this creature enters, you may search your library for a creature card with mana value 1 or less, reveal it, put it into your hand, then shuffle.\nSacrifice this creature: Your opponents can't cast noncreature spells this turn.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "prevent_casting",
+          "scope": "noncreature_spells",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "W",
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "限制非生物咒语"
+      ]
+    },
+    {
+      "name": "Swords to Plowshares",
+      "scryfall_id": "68ec2aed-7662-48ae-ab25-04f74ece1e41",
+      "oracle_id": "b1544f21-7e98-461b-aed5-e748b0168c52",
+      "deck_count": 31,
+      "appearance_rate": 0.356322,
+      "scryfall_uri": "https://scryfall.com/card/soc/179/swords-to-plowshares?utm_source=api",
+      "base": {
+        "mana_cost": "{W}",
+        "mana_value": 1.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Exile target creature. Its controller gains life equal to its power.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Into the Flood Maw",
+      "scryfall_id": "50b9575a-53d9-4df7-b86c-cda021107d3f",
+      "oracle_id": "8cb36a67-9206-4665-a03f-64f52ba559c4",
+      "deck_count": 29,
+      "appearance_rate": 0.333333,
+      "scryfall_uri": "https://scryfall.com/card/blb/52/into-the-flood-maw?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Gift a tapped Fish (You may promise an opponent a gift as you cast this spell. If you do, they create a tapped 1/1 blue Fish creature token before its other effects.)\nReturn target creature an opponent controls to its owner's hand. If the gift was promised, instead return target nonland permanent an opponent controls to its owner's hand.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent",
+          "constraints": [
+            "returns_to_hand"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "弹回非地永久物"
+      ]
+    },
+    {
+      "name": "Pyroblast",
+      "scryfall_id": "b029eb9a-dd7a-40c2-96c4-0063d9cc002c",
+      "oracle_id": "ecc435e2-deb1-420a-a79f-01dd08747314",
+      "deck_count": 28,
+      "appearance_rate": 0.321839,
+      "scryfall_uri": "https://scryfall.com/card/ema/142/pyroblast?utm_source=api",
+      "base": {
+        "mana_cost": "{R}",
+        "mana_value": 1.0,
+        "colors": [
+          "R"
+        ],
+        "color_identity": [
+          "R"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Choose one —\n• Counter target spell if it's blue.\n• Destroy target permanent if it's blue.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell",
+          "constraints": [
+            "target_is_blue"
+          ]
+        },
+        {
+          "family": "remove",
+          "scope": "permanent",
+          "constraints": [
+            "target_is_blue"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "R"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语",
+        "处理永久物"
+      ]
+    },
+    {
+      "name": "Cyclonic Rift",
+      "scryfall_id": "dfb7c4b9-f2f4-4d4e-baf2-86551c8150fe",
+      "oracle_id": "d75b9c82-1b49-4c3e-a1b5-aeef57d6644b",
+      "deck_count": 25,
+      "appearance_rate": 0.287356,
+      "scryfall_uri": "https://scryfall.com/card/rvr/40/cyclonic-rift?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{U}",
+        "mana_value": 2.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Return target nonland permanent you don't control to its owner's hand.\nOverload {6}{U} (You may cast this spell for its overload cost. If you do, change \"target\" in its text to \"each.\")",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent",
+          "constraints": [
+            "returns_to_hand"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "弹回非地永久物"
+      ]
+    },
+    {
+      "name": "Deadly Rollick",
+      "scryfall_id": "0e13f735-54fa-42b6-aea4-ced33811d7d4",
+      "oracle_id": "0456ec64-2c81-4763-a352-8ff64a4c3d6b",
+      "deck_count": 18,
+      "appearance_rate": 0.206897,
+      "scryfall_uri": "https://scryfall.com/card/cmm/147/deadly-rollick?utm_source=api",
+      "base": {
+        "mana_cost": "{3}{B}",
+        "mana_value": 4.0,
+        "colors": [
+          "B"
+        ],
+        "color_identity": [
+          "B"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "If you control a commander, you may cast this spell without paying its mana cost.\nExile target creature.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 3,
+          "colors": [
+            "B"
+          ]
+        },
+        {
+          "mode": "free",
+          "requires": [
+            "commander_in_play"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Orim's Chant",
+      "scryfall_id": "ee241079-1e5a-4224-b9cb-4fd3e0da687c",
+      "oracle_id": "26d3a818-7faf-443a-a6bd-9773edaedf17",
+      "deck_count": 18,
+      "appearance_rate": 0.206897,
+      "scryfall_uri": "https://scryfall.com/card/mh3/265/orims-chant?utm_source=api",
+      "base": {
+        "mana_cost": "{W}",
+        "mana_value": 1.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Kicker {W} (You may pay an additional {W} as you cast this spell.)\nTarget player can't cast spells this turn. If this spell was kicked, creatures can't attack this turn.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "prevent_casting",
+          "scope": "target_player_spells_this_turn"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "限制目标牌手本回合施放咒语"
+      ]
+    },
+    {
+      "name": "Redirect Lightning",
+      "scryfall_id": "2b5b14a7-1fdd-4efc-b197-cadfa7f7c860",
+      "oracle_id": "c62b5c22-e058-436f-9575-a01cb2112829",
+      "deck_count": 17,
+      "appearance_rate": 0.195402,
+      "scryfall_uri": "https://scryfall.com/card/tla/151/redirect-lightning?utm_source=api",
+      "base": {
+        "mana_cost": "{R}",
+        "mana_value": 1.0,
+        "colors": [
+          "R"
+        ],
+        "color_identity": [
+          "R"
+        ],
+        "type_line": "Instant — Lesson",
+        "oracle_text": "As an additional cost to cast this spell, pay 5 life or pay {2}.\nChange the target of target spell or ability with a single target.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "redirect",
+          "scope": "spell_with_target",
+          "constraints": [
+            "target_has_target"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "R"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "改变目标"
+      ]
+    },
+    {
+      "name": "Deathrite Shaman",
+      "scryfall_id": "cfdb1c47-14be-491f-88b3-bed03489dbc5",
+      "oracle_id": "22f1a4a4-c423-4d1c-8775-0ed604a9fa51",
+      "deck_count": 15,
+      "appearance_rate": 0.172414,
+      "scryfall_uri": "https://scryfall.com/card/rvr/175/deathrite-shaman?utm_source=api",
+      "base": {
+        "mana_cost": "{B/G}",
+        "mana_value": 1.0,
+        "colors": [
+          "B",
+          "G"
+        ],
+        "color_identity": [
+          "B",
+          "G"
+        ],
+        "type_line": "Creature — Elf Shaman",
+        "oracle_text": "{T}: Exile target land card from a graveyard. Add one mana of any color.\n{B}, {T}: Exile target instant or sorcery card from a graveyard. Each opponent loses 2 life.\n{G}, {T}: Exile target creature card from a graveyard. You gain 2 life.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "target_card",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "B",
+            "G"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "处理坟场中的目标牌"
+      ]
+    },
+    {
+      "name": "Abrupt Decay",
+      "scryfall_id": "a8e328c6-3a84-49cf-a1a3-1d1e5373d274",
+      "oracle_id": "1c747fe2-289e-492a-a846-aa77707e2dc3",
+      "deck_count": 14,
+      "appearance_rate": 0.16092,
+      "scryfall_uri": "https://scryfall.com/card/mm3/146/abrupt-decay?utm_source=api",
+      "base": {
+        "mana_cost": "{B}{G}",
+        "mana_value": 2.0,
+        "colors": [
+          "B",
+          "G"
+        ],
+        "color_identity": [
+          "B",
+          "G"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "This spell can't be countered.\nDestroy target nonland permanent with mana value 3 or less.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent",
+          "limits": {
+            "max_mana_value": 3
+          }
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "B",
+            "G"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "处理非地永久物"
+      ]
+    },
+    {
+      "name": "Touch the Spirit Realm",
+      "scryfall_id": "e16ab44e-4257-4c0c-b705-8ac1e9c1d835",
+      "oracle_id": "52f0dcbd-ccf3-4525-8e55-2d38b4991834",
+      "deck_count": 13,
+      "appearance_rate": 0.149425,
+      "scryfall_uri": "https://scryfall.com/card/neo/40/touch-the-spirit-realm?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{W}",
+        "mana_value": 3.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Enchantment",
+        "oracle_text": "When this enchantment enters, exile up to one target artifact or creature until this enchantment leaves the battlefield.\nChannel — {1}{W}, Discard this card: Exile target artifact or creature. Return it to the battlefield under its owner's control at the beginning of the next end step.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "artifact"
+        },
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "W"
+          ]
+        },
+        {
+          "mode": "channel",
+          "generic": 1,
+          "colors": [
+            "W"
+          ],
+          "requires": [
+            "discard_from_hand"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "channel",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标神器",
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Grave Researcher // Reanimate",
+      "scryfall_id": "8b1e10e8-ea14-4761-910b-4072e2a18456",
+      "oracle_id": "6cb8b8c4-0674-4f14-9d89-010969fbb80e",
+      "deck_count": 12,
+      "appearance_rate": 0.137931,
+      "scryfall_uri": "https://scryfall.com/card/sos/85/grave-researcher-reanimate?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{B} // {B}",
+        "mana_value": 3.0,
+        "colors": [
+          "B"
+        ],
+        "color_identity": [
+          "B"
+        ],
+        "type_line": "Creature — Troll Warlock // Sorcery",
+        "oracle_text": "At the beginning of your upkeep, surveil 1. Then if there are three or more creature cards in your graveyard, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) // Put target creature card from a graveyard onto the battlefield under your control. You lose life equal to that card's mana value.",
+        "layout": "prepare",
+        "faces": [
+          {
+            "name": "Grave Researcher",
+            "mana_cost": "{2}{B}",
+            "colors": [],
+            "type_line": "Creature — Troll Warlock",
+            "oracle_text": "At the beginning of your upkeep, surveil 1. Then if there are three or more creature cards in your graveyard, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)"
+          },
+          {
+            "name": "Reanimate",
+            "mana_cost": "{B}",
+            "colors": [],
+            "type_line": "Sorcery",
+            "oracle_text": "Put target creature card from a graveyard onto the battlefield under your control. You lose life equal to that card's mana value."
+          }
+        ]
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "target_card",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "B",
+            "B"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "处理坟场中的目标牌"
+      ]
+    },
+    {
+      "name": "Hullbreaker Horror",
+      "scryfall_id": "137acb70-a1fd-4ea9-a5d9-f4b438eb5e82",
+      "oracle_id": "d4a84e78-d9b9-4c67-8a4b-4329e65f0f15",
+      "deck_count": 12,
+      "appearance_rate": 0.137931,
+      "scryfall_uri": "https://scryfall.com/card/inr/68/hullbreaker-horror?utm_source=api",
+      "base": {
+        "mana_cost": "{5}{U}{U}",
+        "mana_value": 7.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Creature — Kraken Horror",
+        "oracle_text": "Flash\nThis spell can't be countered.\nWhenever you cast a spell, choose up to one —\n• Return target spell you don't control to its owner's hand.\n• Return target nonland permanent to its owner's hand.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent",
+          "constraints": [
+            "returns_to_hand"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 5,
+          "colors": [
+            "U",
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "flash",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "弹回非地永久物"
+      ]
+    },
+    {
+      "name": "Daze",
+      "scryfall_id": "f05e9a3e-8a35-4687-85cb-e31b3927a5e2",
+      "oracle_id": "70486bee-6ee7-41ea-b834-8caf4699302b",
+      "deck_count": 9,
+      "appearance_rate": 0.103448,
+      "scryfall_uri": "https://scryfall.com/card/ema/44/daze?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{U}",
+        "mana_value": 2.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "You may return an Island you control to its owner's hand rather than pay this spell's mana cost.\nCounter target spell unless its controller pays {1}.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Noxious Revival",
+      "scryfall_id": "1bdd1243-1d14-496a-9b7a-0c5b34461361",
+      "oracle_id": "97cabeda-9fe3-490d-99b4-4c8d87c17157",
+      "deck_count": 9,
+      "appearance_rate": 0.103448,
+      "scryfall_uri": "https://scryfall.com/card/nph/118/noxious-revival?utm_source=api",
+      "base": {
+        "mana_cost": "{G/P}",
+        "mana_value": 1.0,
+        "colors": [
+          "G"
+        ],
+        "color_identity": [
+          "G"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "({G/P} can be paid with either {G} or 2 life.)\nPut target card from a graveyard on top of its owner's library.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "target_card"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "G"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "处理坟场中的目标牌"
+      ]
+    },
+    {
+      "name": "Endurance",
+      "scryfall_id": "b770471c-1bf7-4179-8418-dcd790ca5405",
+      "oracle_id": "c85d824b-c190-4d04-ab99-918ad0e6516c",
+      "deck_count": 8,
+      "appearance_rate": 0.091954,
+      "scryfall_uri": "https://scryfall.com/card/ecc/51/endurance?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{G}{G}",
+        "mana_value": 3.0,
+        "colors": [
+          "G"
+        ],
+        "color_identity": [
+          "G"
+        ],
+        "type_line": "Creature — Elemental Incarnation",
+        "oracle_text": "Flash\nReach\nWhen this creature enters, up to one target player puts all the cards from their graveyard on the bottom of their library in a random order.\nEvoke—Exile a green card from your hand.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "shuffle_or_bottom"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "G",
+            "G"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "flash",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "洗回或置于牌库底"
+      ]
+    },
+    {
+      "name": "Misdirection",
+      "scryfall_id": "c96763d6-0cea-40ed-afb2-886bfebe50a0",
+      "oracle_id": "c39e5fb0-6de3-4105-ad3c-0ecb8951a1d5",
+      "deck_count": 8,
+      "appearance_rate": 0.091954,
+      "scryfall_uri": "https://scryfall.com/card/ddt/15/misdirection?utm_source=api",
+      "base": {
+        "mana_cost": "{3}{U}{U}",
+        "mana_value": 5.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "You may exile a blue card from your hand rather than pay this spell's mana cost.\nChange the target of target spell with a single target.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "redirect",
+          "scope": "spell_with_target",
+          "constraints": [
+            "target_has_target"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 3,
+          "colors": [
+            "U",
+            "U"
+          ]
+        },
+        {
+          "mode": "pitch",
+          "requires": [
+            "blue_card_in_hand"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "改变目标"
+      ]
+    },
+    {
+      "name": "Ertai Resurrected",
+      "scryfall_id": "7f7e780e-fbc5-4dc0-b5c7-efcb8645c7c6",
+      "oracle_id": "3d038f7c-95fa-4b71-8f74-b9b4dd45cde0",
+      "deck_count": 6,
+      "appearance_rate": 0.068966,
+      "scryfall_uri": "https://scryfall.com/card/dmu/199/ertai-resurrected?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{U}{B}",
+        "mana_value": 4.0,
+        "colors": [
+          "B",
+          "U"
+        ],
+        "color_identity": [
+          "B",
+          "U"
+        ],
+        "type_line": "Legendary Creature — Phyrexian Human Wizard",
+        "oracle_text": "Flash\nWhen Ertai Resurrected enters, choose up to one —\n• Counter target spell, activated ability, or triggered ability. Its controller draws a card.\n• Destroy another target creature or planeswalker. Its controller draws a card.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "spell_or_ability"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "U",
+            "B"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "flash",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击咒语或异能"
+      ]
+    },
+    {
+      "name": "Flare of Denial",
+      "scryfall_id": "71a98efb-9b0a-496b-ac21-8d70527ea544",
+      "oracle_id": "437cfd16-94bc-43ba-afd8-e9e9d028a4ca",
+      "deck_count": 6,
+      "appearance_rate": 0.068966,
+      "scryfall_uri": "https://scryfall.com/card/mh3/62/flare-of-denial?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{U}{U}",
+        "mana_value": 3.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "You may sacrifice a nontoken blue creature rather than pay this spell's mana cost.\nCounter target spell.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "U",
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Hydroelectric Specimen // Hydroelectric Laboratory",
+      "scryfall_id": "8689ecd7-e9a6-458b-99d2-6dbaca527f00",
+      "oracle_id": "573151f0-00d4-4a8a-8a09-745c5f376532",
+      "deck_count": 6,
+      "appearance_rate": 0.068966,
+      "scryfall_uri": "https://scryfall.com/card/mh3/240/hydroelectric-specimen-hydroelectric-laboratory?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{U}",
+        "mana_value": 3.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Creature — Weird // Land",
+        "oracle_text": "Flash\nWhen this creature enters, you may change the target of target instant or sorcery spell with a single target to this creature. // As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {U}.",
+        "layout": "modal_dfc",
+        "faces": [
+          {
+            "name": "Hydroelectric Specimen",
+            "mana_cost": "{2}{U}",
+            "colors": [
+              "U"
+            ],
+            "type_line": "Creature — Weird",
+            "oracle_text": "Flash\nWhen this creature enters, you may change the target of target instant or sorcery spell with a single target to this creature."
+          },
+          {
+            "name": "Hydroelectric Laboratory",
+            "mana_cost": "",
+            "colors": [],
+            "type_line": "Land",
+            "oracle_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {U}."
+          }
+        ]
+      },
+      "answers": [
+        {
+          "family": "redirect",
+          "scope": "spell_with_target",
+          "constraints": [
+            "target_has_target"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "flash",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "改变目标"
+      ]
+    },
+    {
+      "name": "Hazel's Brewmaster",
+      "scryfall_id": "52af8b70-a9c8-40d7-99da-fa51dc293688",
+      "oracle_id": "e8180024-1979-4677-9a0d-e08d4b7c825a",
+      "deck_count": 5,
+      "appearance_rate": 0.057471,
+      "scryfall_uri": "https://scryfall.com/card/blc/17/hazels-brewmaster?utm_source=api",
+      "base": {
+        "mana_cost": "{3}{B}",
+        "mana_value": 4.0,
+        "colors": [
+          "B"
+        ],
+        "color_identity": [
+          "B"
+        ],
+        "type_line": "Creature — Squirrel Warlock",
+        "oracle_text": "Menace\nWhenever this creature enters or attacks, exile up to one target card from a graveyard and create a Food token.\nFoods you control have all activated abilities of all creature cards exiled with this creature.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "target_card",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 3,
+          "colors": [
+            "B"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "处理坟场中的目标牌"
+      ]
+    },
+    {
+      "name": "Louisoix's Sacrifice",
+      "scryfall_id": "4a6976f2-0bd5-449a-8fcf-f5a732ce22c1",
+      "oracle_id": "42d8ab49-703a-4fd3-84d0-0a3ac1eafca8",
+      "deck_count": 5,
+      "appearance_rate": 0.057471,
+      "scryfall_uri": "https://scryfall.com/card/fin/59/louisoixs-sacrifice?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "As an additional cost to cast this spell, sacrifice a legendary creature or pay {2}.\nCounter target activated ability, triggered ability, or noncreature spell.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "activated_ability"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击起动式异能"
+      ]
+    },
+    {
+      "name": "Necromancy",
+      "scryfall_id": "3dd34a1a-e76b-46ee-be8d-5f7f4a092648",
+      "oracle_id": "699b192c-f3f2-4ac5-9ca9-e35bcf08ad8a",
+      "deck_count": 5,
+      "appearance_rate": 0.057471,
+      "scryfall_uri": "https://scryfall.com/card/mkc/131/necromancy?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{B}",
+        "mana_value": 3.0,
+        "colors": [
+          "B"
+        ],
+        "color_identity": [
+          "B"
+        ],
+        "type_line": "Enchantment",
+        "oracle_text": "You may cast this spell as though it had flash. If you cast it any time a sorcery couldn't have been cast, the controller of the permanent it becomes sacrifices it at the beginning of the next cleanup step.\nWhen this enchantment enters, if it's on the battlefield, it becomes an Aura with \"enchant creature put onto the battlefield with Necromancy.\" Put target creature card from a graveyard onto the battlefield under your control and attach this enchantment to it. When this enchantment leaves the battlefield, that creature's controller sacrifices it.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "target_card"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "B"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "flash",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "处理坟场中的目标牌"
+      ]
+    },
+    {
+      "name": "Saw in Half",
+      "scryfall_id": "05e6a7bc-a35a-4e68-99a0-be264553b5de",
+      "oracle_id": "eea18c55-8695-4ba1-9b38-3e7638692f5f",
+      "deck_count": 5,
+      "appearance_rate": 0.057471,
+      "scryfall_uri": "https://scryfall.com/card/unf/88/saw-in-half?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{B}",
+        "mana_value": 3.0,
+        "colors": [
+          "B"
+        ],
+        "color_identity": [
+          "B"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Destroy target creature. If that creature dies this way, its controller creates two tokens that are copies of that creature, except their power is half that creature's power and their toughness is half that creature's toughness. Round up each time.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "B"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Tibalt's Trickery",
+      "scryfall_id": "dd921e27-3e08-438c-bec2-723226d35175",
+      "oracle_id": "6623cb85-fb1e-4561-8b21-0977c25096c2",
+      "deck_count": 5,
+      "appearance_rate": 0.057471,
+      "scryfall_uri": "https://scryfall.com/card/khm/153/tibalts-trickery?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{R}",
+        "mana_value": 2.0,
+        "colors": [
+          "R"
+        ],
+        "color_identity": [
+          "R"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target spell. Choose 1, 2, or 3 at random. Its controller mills that many cards, then exiles cards from the top of their library until they exile a nonland card with a different name than that spell. They may cast that card without paying its mana cost. Then they put the exiled cards on the bottom of their library in a random order.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "R"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Trained Blessed Mind",
+      "scryfall_id": "633f98c3-ffec-48c0-ac01-d599312fe288",
+      "oracle_id": "7a1ff7f3-0b3e-47fe-9e89-522c04f53869",
+      "deck_count": 5,
+      "appearance_rate": 0.057471,
+      "scryfall_uri": "https://scryfall.com/card/sunf/44/trained-blessed-mind?utm_source=api",
+      "base": {
+        "mana_cost": "",
+        "mana_value": 0.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Stickers",
+        "oracle_text": "{TK}{TK} — {T}: Exile target card from a graveyard.\n{TK}{TK}{TK} — Threshold — As long as seven or more cards are in your graveyard, this creature gets +4/+0 and has trample.\n{TK}{TK} — 4/2\n{TK}{TK}{TK}{TK}{TK} — 6/9",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "target_card"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "sorcery",
+        "source": "card_type",
+        "usable_from_hand_as_response": false
+      },
+      "candidate_reasons": [
+        "处理坟场中的目标牌"
+      ]
+    },
+    {
+      "name": "Angel's Grace",
+      "scryfall_id": "e78e39ea-20be-4196-992c-7ed2cb8150c1",
+      "oracle_id": "66ca8a60-e028-4a5f-8177-860b888cb9d1",
+      "deck_count": 4,
+      "appearance_rate": 0.045977,
+      "scryfall_uri": "https://scryfall.com/card/tsr/4/angels-grace?utm_source=api",
+      "base": {
+        "mana_cost": "{W}",
+        "mana_value": 1.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.)\nYou can't lose the game this turn and your opponents can't win the game this turn. Until end of turn, damage that would reduce your life total to less than 1 reduces it to 1 instead.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "special",
+          "scope": "lose_prevention"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "防止输掉游戏"
+      ]
+    },
+    {
+      "name": "Delay",
+      "scryfall_id": "3906d538-f1ca-4799-b91c-2e0d2934f241",
+      "oracle_id": "983caa3f-7089-4e66-825d-4086a5adb9bb",
+      "deck_count": 4,
+      "appearance_rate": 0.045977,
+      "scryfall_uri": "https://scryfall.com/card/tsr/61/delay?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{U}",
+        "mana_value": 2.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target spell. If the spell is countered this way, exile it with three time counters on it instead of putting it into its owner's graveyard. If it doesn't have suspend, it gains suspend. (At the beginning of its owner's upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it's a creature, it has haste.)",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Mana Drain",
+      "scryfall_id": "3c429c40-2389-41e5-8681-4bb274e25eba",
+      "oracle_id": "74d3277a-38e5-4732-afed-084a56148f20",
+      "deck_count": 4,
+      "appearance_rate": 0.045977,
+      "scryfall_uri": "https://scryfall.com/card/2x2/57/mana-drain?utm_source=api",
+      "base": {
+        "mana_cost": "{U}{U}",
+        "mana_value": 2.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target spell. At the beginning of your next main phase, add an amount of {C} equal to that spell's mana value.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U",
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Nicol Bolas, Dragon-God",
+      "scryfall_id": "c5408607-af8f-48fe-bc40-32828d1976de",
+      "oracle_id": "581eedc4-efe4-4ae4-baf2-88071e7e6f6d",
+      "deck_count": 4,
+      "appearance_rate": 0.045977,
+      "scryfall_uri": "https://scryfall.com/card/rvr/205/nicol-bolas-dragon-god?utm_source=api",
+      "base": {
+        "mana_cost": "{U}{B}{B}{B}{R}",
+        "mana_value": 5.0,
+        "colors": [
+          "B",
+          "R",
+          "U"
+        ],
+        "color_identity": [
+          "B",
+          "R",
+          "U"
+        ],
+        "type_line": "Legendary Planeswalker — Bolas",
+        "oracle_text": "Nicol Bolas has all loyalty abilities of all other planeswalkers on the battlefield.\n+1: You draw a card. Each opponent exiles a card from their hand or a permanent they control.\n−3: Destroy target creature or planeswalker.\n−8: Each opponent who doesn't control a legendary creature or planeswalker loses the game.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "creature",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U",
+            "B",
+            "B",
+            "B",
+            "R"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Soul Partition",
+      "scryfall_id": "28bb8ec0-9729-4aa1-8ce4-a3a5598b0d70",
+      "oracle_id": "2cfd5c18-47d0-4549-aacc-2428db21df2f",
+      "deck_count": 4,
+      "appearance_rate": 0.045977,
+      "scryfall_uri": "https://scryfall.com/card/bro/26/soul-partition?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{W}",
+        "mana_value": 2.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Exile target nonland permanent. For as long as that card remains exiled, its owner may play it. A spell cast by an opponent this way costs {2} more to cast.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "处理非地永久物"
+      ]
+    },
+    {
+      "name": "Spell Pierce",
+      "scryfall_id": "8dd4374f-0301-4b2e-bc99-2cd19568cb3b",
+      "oracle_id": "d64b0848-0193-4025-ba62-63ecd8fb9f50",
+      "deck_count": 4,
+      "appearance_rate": 0.045977,
+      "scryfall_uri": "https://scryfall.com/card/dft/64/spell-pierce?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target noncreature spell unless its controller pays {2}.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "noncreature_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击非生物咒语"
+      ]
+    },
+    {
+      "name": "Untimely Malfunction",
+      "scryfall_id": "857bfb0e-17dc-4dda-bc37-3df927a9eae6",
+      "oracle_id": "2c49d24a-98a4-43c2-bb59-1ef13d4214c2",
+      "deck_count": 4,
+      "appearance_rate": 0.045977,
+      "scryfall_uri": "https://scryfall.com/card/dsk/161/untimely-malfunction?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{R}",
+        "mana_value": 2.0,
+        "colors": [
+          "R"
+        ],
+        "color_identity": [
+          "R"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Choose one —\n• Destroy target artifact.\n• Change the target of target spell or ability with a single target.\n• One or two target creatures can't block this turn.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "artifact"
+        },
+        {
+          "family": "redirect",
+          "scope": "spell_with_target",
+          "constraints": [
+            "target_has_target"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "R"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标神器",
+        "改变目标"
+      ]
+    },
+    {
+      "name": "Counterspell",
+      "scryfall_id": "4f616706-ec97-4923-bb1e-11a69fbaa1f8",
+      "oracle_id": "cc187110-1148-4090-bbb8-e205694a39f5",
+      "deck_count": 3,
+      "appearance_rate": 0.034483,
+      "scryfall_uri": "https://scryfall.com/card/dsc/114/counterspell?utm_source=api",
+      "base": {
+        "mana_cost": "{U}{U}",
+        "mana_value": 2.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target spell.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U",
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Pongify",
+      "scryfall_id": "4131fa63-5afc-4b63-a4b4-f47b4bced87f",
+      "oracle_id": "05849bd6-8f38-4031-be2b-e2aa03beb8cc",
+      "deck_count": 3,
+      "appearance_rate": 0.034483,
+      "scryfall_uri": "https://scryfall.com/card/tdc/160/pongify?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Destroy target creature. It can't be regenerated. Its controller creates a 3/3 green Ape creature token.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Rapid Hybridization",
+      "scryfall_id": "ccda5bda-5afd-4548-bd48-12c780bfa68b",
+      "oracle_id": "06692cd9-ac2f-4a32-8fd1-043ba3c0fe71",
+      "deck_count": 3,
+      "appearance_rate": 0.034483,
+      "scryfall_uri": "https://scryfall.com/card/soc/198/rapid-hybridization?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Destroy target creature. It can't be regenerated. That creature's controller creates a 3/3 green Frog Lizard creature token.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Static Prison",
+      "scryfall_id": "dd16222e-349c-4a2b-a7c8-8eb35a8ab332",
+      "oracle_id": "b1bc8e58-ea4f-46a9-b833-d780cf6758b3",
+      "deck_count": 3,
+      "appearance_rate": 0.034483,
+      "scryfall_uri": "https://scryfall.com/card/mh3/44/static-prison?utm_source=api",
+      "base": {
+        "mana_cost": "{W}",
+        "mana_value": 1.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Enchantment",
+        "oracle_text": "When this enchantment enters, exile target nonland permanent an opponent controls until this enchantment leaves the battlefield. You get {E}{E} (two energy counters).\nAt the beginning of your first main phase, sacrifice this enchantment unless you pay {E}.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "处理非地永久物"
+      ]
+    },
+    {
+      "name": "Tidespout Tyrant",
+      "scryfall_id": "db68f47b-f49a-4978-acdd-453ecfb948da",
+      "oracle_id": "331b44e4-cf08-44f4-8afd-a7374e5dc5ed",
+      "deck_count": 3,
+      "appearance_rate": 0.034483,
+      "scryfall_uri": "https://scryfall.com/card/rvr/63/tidespout-tyrant?utm_source=api",
+      "base": {
+        "mana_cost": "{5}{U}{U}{U}",
+        "mana_value": 8.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Creature — Djinn",
+        "oracle_text": "Flying\nWhenever you cast a spell, return target permanent to its owner's hand.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "permanent",
+          "constraints": [
+            "returns_to_hand"
+          ],
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 5,
+          "colors": [
+            "U",
+            "U",
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "弹回永久物"
+      ]
+    },
+    {
+      "name": "Tormod's Crypt",
+      "scryfall_id": "752bf493-5839-47e8-95f2-6d8201907428",
+      "oracle_id": "1573f7f9-672c-421a-b1ac-3d0d8aea59ca",
+      "deck_count": 3,
+      "appearance_rate": 0.034483,
+      "scryfall_uri": "https://scryfall.com/card/dmr/235/tormods-crypt?utm_source=api",
+      "base": {
+        "mana_cost": "{0}",
+        "mana_value": 0.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Artifact",
+        "oracle_text": "{T}, Sacrifice this artifact: Exile target player's graveyard.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "target_player_graveyard",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "放逐牌手坟场"
+      ]
+    },
+    {
+      "name": "Abstergo Entertainment",
+      "scryfall_id": "4d197866-7633-493c-80dd-ec3a09165934",
+      "oracle_id": "d06a8026-1657-4404-8dff-64e44f1a14f8",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/acr/79/abstergo-entertainment?utm_source=api",
+      "base": {
+        "mana_cost": "",
+        "mana_value": 0.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Legendary Land",
+        "oracle_text": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color.\n{3}, {T}, Exile Abstergo Entertainment: Return up to one target historic card from your graveyard to your hand, then exile all graveyards. (Artifacts, legendaries, and Sagas are historic.)",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "all_graveyards",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "放逐所有坟场"
+      ]
+    },
+    {
+      "name": "Assassin's Trophy",
+      "scryfall_id": "aaf258fc-3ba4-4b83-bdbf-10a07e0b6c03",
+      "oracle_id": "ac10d218-f9a6-4058-9cda-a15ca1b0b7b5",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/soc/294/assassins-trophy?utm_source=api",
+      "base": {
+        "mana_cost": "{B}{G}",
+        "mana_value": 2.0,
+        "colors": [
+          "B",
+          "G"
+        ],
+        "color_identity": [
+          "B",
+          "G"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "permanent"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "B",
+            "G"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "处理永久物"
+      ]
+    },
+    {
+      "name": "Baleful Mastery",
+      "scryfall_id": "579e20e7-1395-4a6c-a836-ae3419fc8808",
+      "oracle_id": "adfcdadd-ddda-477b-8e72-0cae2430fb63",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/otc/126/baleful-mastery?utm_source=api",
+      "base": {
+        "mana_cost": "{3}{B}",
+        "mana_value": 4.0,
+        "colors": [
+          "B"
+        ],
+        "color_identity": [
+          "B"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "You may pay {1}{B} rather than pay this spell's mana cost.\nIf the {1}{B} cost was paid, an opponent draws a card.\nExile target creature or planeswalker.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 3,
+          "colors": [
+            "B"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Banishing Knack",
+      "scryfall_id": "371a769a-ddae-47f6-b2c2-957de5c18417",
+      "oracle_id": "6f23621e-eceb-402e-a8d3-8e2b734762b3",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/eve/17/banishing-knack?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Until end of turn, target creature gains \"{T}: Return target nonland permanent to its owner's hand.\"",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent",
+          "constraints": [
+            "returns_to_hand"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "弹回非地永久物"
+      ]
+    },
+    {
+      "name": "Eldrazi Confluence",
+      "scryfall_id": "78ee2013-29dc-4879-9d59-1b492996d297",
+      "oracle_id": "01160cb5-6d83-4317-9522-74083b3a83bb",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/m3c/32/eldrazi-confluence?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{C}{C}",
+        "mana_value": 4.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Instant",
+        "oracle_text": "Choose three. You may choose the same mode more than once.\n• Target creature gets +3/-3 until end of turn.\n• Exile target nonland permanent, then return it to the battlefield tapped under its owner's control.\n• Create a 1/1 colorless Eldrazi Scion creature token with \"Sacrifice this token: Add {C}.\"",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "nonland_permanent"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 4,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "处理非地永久物"
+      ]
+    },
+    {
+      "name": "Ephemerate",
+      "scryfall_id": "2da5f3f8-5eef-498f-ba2c-2f3fbc3745aa",
+      "oracle_id": "0fd57894-b917-41c8-a394-360d1d31b236",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/mh1/7/ephemerate?utm_source=api",
+      "base": {
+        "mana_cost": "{W}",
+        "mana_value": 1.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Exile target creature you control, then return it to the battlefield under its owner's control.\nRebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Manglehorn",
+      "scryfall_id": "0aa3a844-97e6-4f5d-a36f-56fea4e06932",
+      "oracle_id": "b67db32b-30a9-49d2-b4c2-90a9f80c36eb",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/akh/175/manglehorn?utm_source=api",
+      "base": {
+        "mana_cost": "{2}{G}",
+        "mana_value": 3.0,
+        "colors": [
+          "G"
+        ],
+        "color_identity": [
+          "G"
+        ],
+        "type_line": "Creature — Beast",
+        "oracle_text": "When this creature enters, you may destroy target artifact.\nArtifacts your opponents control enter tapped.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "artifact",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 2,
+          "colors": [
+            "G"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "去除目标神器"
+      ]
+    },
+    {
+      "name": "Miscast",
+      "scryfall_id": "033afbd5-9937-4957-98ba-48e469a490bb",
+      "oracle_id": "e08c71aa-d35c-4c20-b4db-ae9d36ee3169",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/m21/57/miscast?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target instant or sorcery spell unless its controller pays {3}.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "instant_or_sorcery"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击瞬间或法术"
+      ]
+    },
+    {
+      "name": "Muddle the Mixture",
+      "scryfall_id": "e69d760c-48fb-4e7f-8611-547b0c22928c",
+      "oracle_id": "0826cf7d-7ccc-459b-a92f-29dc169628f8",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/rvr/50/muddle-the-mixture?utm_source=api",
+      "base": {
+        "mana_cost": "{U}{U}",
+        "mana_value": 2.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Counter target instant or sorcery spell.\nTransmute {1}{U}{U} ({1}{U}{U}, Discard this card: Search your library for a card with the same mana value as this card, reveal it, put it into your hand, then shuffle. Transmute only as a sorcery.)",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "instant_or_sorcery"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U",
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "反击瞬间或法术"
+      ]
+    },
+    {
+      "name": "Relic of Progenitus",
+      "scryfall_id": "436cd66c-0622-43cd-8748-af4d21a2db3f",
+      "oracle_id": "6a9c3401-570c-41cb-a605-75dfa57d6ab7",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/ema/231/relic-of-progenitus?utm_source=api",
+      "base": {
+        "mana_cost": "{1}",
+        "mana_value": 1.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Artifact",
+        "oracle_text": "{T}: Target player exiles a card from their graveyard.\n{1}, Exile this artifact: Exile all graveyards. Draw a card.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "all_graveyards",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "放逐所有坟场"
+      ]
+    },
+    {
+      "name": "Resculpt",
+      "scryfall_id": "5443f46d-03f9-468e-a78d-a059529b1151",
+      "oracle_id": "814e321d-16fd-4f7b-a8d8-2b089be76f2c",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/soc/201/resculpt?utm_source=api",
+      "base": {
+        "mana_cost": "{1}{U}",
+        "mana_value": 2.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Instant",
+        "oracle_text": "Exile target artifact or creature. Its controller creates a 4/4 blue and red Elemental creature token.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "artifact"
+        },
+        {
+          "family": "remove",
+          "scope": "creature"
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "instant",
+        "source": "card_type",
+        "usable_from_hand_as_response": true
+      },
+      "candidate_reasons": [
+        "去除目标神器",
+        "去除目标生物"
+      ]
+    },
+    {
+      "name": "Sentinel Totem",
+      "scryfall_id": "0d8097eb-518a-4b8e-8d6a-a139d4ddcc8f",
+      "oracle_id": "5432bd43-e92c-464b-9ad2-3515f3042799",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/xln/245/sentinel-totem?utm_source=api",
+      "base": {
+        "mana_cost": "{1}",
+        "mana_value": 1.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Artifact",
+        "oracle_text": "When this artifact enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.)\n{T}, Exile this artifact: Exile all graveyards.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "all_graveyards",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "放逐所有坟场"
+      ]
+    },
+    {
+      "name": "Siren Stormtamer",
+      "scryfall_id": "073c301e-5bb6-49fa-bf61-2f662030540f",
+      "oracle_id": "59c7496b-19a2-478b-b28f-6f153c2458ae",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/lcc/171/siren-stormtamer?utm_source=api",
+      "base": {
+        "mana_cost": "{U}",
+        "mana_value": 1.0,
+        "colors": [
+          "U"
+        ],
+        "color_identity": [
+          "U"
+        ],
+        "type_line": "Creature — Siren Pirate Wizard",
+        "oracle_text": "Flying\n{U}, Sacrifice this creature: Counter target spell or ability that targets you or a creature you control.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "counter",
+          "scope": "any_spell",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 0,
+          "colors": [
+            "U"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "反击任意咒语"
+      ]
+    },
+    {
+      "name": "Soul-Guide Lantern",
+      "scryfall_id": "f4907e7b-d6d5-4e9b-968f-bce34ae4a577",
+      "oracle_id": "1b5e6560-ff2e-4475-96cb-63f64c8a86db",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/eoc/143/soul-guide-lantern?utm_source=api",
+      "base": {
+        "mana_cost": "{1}",
+        "mana_value": 1.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Artifact",
+        "oracle_text": "When this artifact enters, exile target card from a graveyard.\n{T}, Sacrifice this artifact: Exile each opponent's graveyard.\n{1}, {T}, Sacrifice this artifact: Draw a card.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "graveyard_hate",
+          "scope": "target_player_graveyard",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        },
+        {
+          "family": "graveyard_hate",
+          "scope": "target_card",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 1,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "放逐牌手坟场",
+        "处理坟场中的目标牌"
+      ]
+    },
+    {
+      "name": "Staff of Compleation",
+      "scryfall_id": "0c475639-1368-4e29-adeb-8973e343bca5",
+      "oracle_id": "11c7662f-e688-40a6-98fd-6ae89d231b44",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/tdc/326/staff-of-compleation?utm_source=api",
+      "base": {
+        "mana_cost": "{3}",
+        "mana_value": 3.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Artifact",
+        "oracle_text": "{T}, Pay 1 life: Destroy target permanent you own.\n{T}, Pay 2 life: Add one mana of any color.\n{T}, Pay 3 life: Proliferate.\n{T}, Pay 4 life: Draw a card.\n{5}: Untap this artifact.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "permanent",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 3,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "处理永久物"
+      ]
+    },
+    {
+      "name": "Ulamog, the Infinite Gyre",
+      "scryfall_id": "9464a820-65de-44f2-9895-46a35e8621a0",
+      "oracle_id": "b817bc56-9b4d-4c50-bafa-3c652b99578f",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/2x2/3/ulamog-the-infinite-gyre?utm_source=api",
+      "base": {
+        "mana_cost": "{11}",
+        "mana_value": 11.0,
+        "colors": [],
+        "color_identity": [],
+        "type_line": "Legendary Creature — Eldrazi",
+        "oracle_text": "When you cast this spell, destroy target permanent.\nIndestructible\nAnnihilator 4 (Whenever this creature attacks, defending player sacrifices four permanents of their choice.)\nWhen Ulamog is put into a graveyard from anywhere, its owner shuffles their graveyard into their library.",
+        "layout": "normal",
+        "faces": []
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "permanent",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 11,
+          "colors": []
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "处理永久物"
+      ]
+    },
+    {
+      "name": "Witch Enchanter // Witch-Blessed Meadow",
+      "scryfall_id": "62061e7c-cf19-4f03-b8fa-2bdba62d6b0b",
+      "oracle_id": "0355249a-8e4e-41db-9cea-1b901faffbe6",
+      "deck_count": 2,
+      "appearance_rate": 0.022989,
+      "scryfall_uri": "https://scryfall.com/card/mh3/239/witch-enchanter-witch-blessed-meadow?utm_source=api",
+      "base": {
+        "mana_cost": "{3}{W}",
+        "mana_value": 4.0,
+        "colors": [
+          "W"
+        ],
+        "color_identity": [
+          "W"
+        ],
+        "type_line": "Creature — Human Warlock // Land",
+        "oracle_text": "When this creature enters, destroy target artifact or enchantment an opponent controls. // As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {W}.",
+        "layout": "modal_dfc",
+        "faces": [
+          {
+            "name": "Witch Enchanter",
+            "mana_cost": "{3}{W}",
+            "colors": [
+              "W"
+            ],
+            "type_line": "Creature — Human Warlock",
+            "oracle_text": "When this creature enters, destroy target artifact or enchantment an opponent controls."
+          },
+          {
+            "name": "Witch-Blessed Meadow",
+            "mana_cost": "",
+            "colors": [],
+            "type_line": "Land",
+            "oracle_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {W}."
+          }
+        ]
+      },
+      "answers": [
+        {
+          "family": "remove",
+          "scope": "artifact_or_enchantment",
+          "requirements": [
+            "already_on_battlefield"
+          ]
+        }
+      ],
+      "cost_options": [
+        {
+          "mode": "mana",
+          "generic": 3,
+          "colors": [
+            "W"
+          ]
+        }
+      ],
+      "timing": {
+        "speed": "battlefield",
+        "source": "permanent",
+        "usable_from_hand_as_response": false,
+        "requirements": [
+          "already_on_battlefield"
+        ]
+      },
+      "candidate_reasons": [
+        "处理神器或结界"
+      ]
+    }
+  ]
+}
