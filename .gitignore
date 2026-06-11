@@ -14,6 +14,7 @@ desktop.ini
 # Local logs and caches
 *.log
 .cache/
+__pycache__/
 tmp/
 temp/
 
@@ -23,3 +24,4 @@ dist/
 build/
 .env
 .env.*
+API.txt

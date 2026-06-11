@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "families": {
+    "counter": {
+      "label": "反击",
+      "scopes": {
+        "any_spell": "任意咒语",
+        "noncreature_spell": "非生物咒语",
+        "creature_spell": "生物咒语",
+        "instant_or_sorcery": "瞬间或法术",
+        "activated_ability": "起动式异能",
+        "triggered_ability": "触发式异能",
+        "spell_or_ability": "咒语或异能"
+      }
+    },
+    "remove": {
+      "label": "去除",
+      "scopes": {
+        "creature": "生物",
+        "artifact": "神器",
+        "enchantment": "结界",
+        "artifact_or_enchantment": "神器或结界",
+        "nonland_permanent": "非地永久物",
+        "permanent": "永久物"
+      }
+    },
+    "graveyard_hate": {
+      "label": "坟场互动",
+      "scopes": {
+        "target_card": "目标坟场牌",
+        "target_player_graveyard": "目标牌手坟场",
+        "all_graveyards": "所有坟场",
+        "shuffle_or_bottom": "洗回或置于牌库底",
+        "replacement_effect": "替代式坟场限制"
+      }
+    },
+    "prevent_casting": {
+      "label": "阻止施放",
+      "scopes": {
+        "opponents_spells_this_turn": "本回合对手不能施放咒语",
+        "target_player_spells_this_turn": "本回合目标牌手不能施放咒语",
+        "noncreature_spells": "非生物咒语",
+        "next_spell_only": "下一个咒语"
+      }
+    },
+    "redirect": {
+      "label": "改变目标",
+      "scopes": {
+        "spell_with_target": "有目标的咒语",
+        "ability_with_target": "有目标的异能"
+      }
+    },
+    "special": {
+      "label": "特殊互动",
+      "scopes": {
+        "oracle_win_stop": "阻止先知类获胜",
+        "lose_prevention": "防止失败或对手获胜",
+        "exile_stack": "放逐堆叠上的咒语"
+      }
+    }
+  },
+  "requirement_terms": {
+    "blue_card_in_hand": "需要手牌中有蓝牌可放逐",
+    "green_card_in_hand": "需要手牌中有绿牌可放逐",
+    "commander_in_play": "需要主将在场",
+    "not_your_turn": "需要不是自己的回合",
+    "controls_swamp": "需要操控沼泽",
+    "discard_from_hand": "需要从手牌弃掉此牌",
+    "opponent_cast_three_spells_this_turn": "需要对手本回合已经施放三个咒语",
+    "already_on_battlefield": "需要此牌已经在战场上"
+  },
+  "constraint_terms": {
+    "target_is_blue": "目标必须是蓝色",
+    "target_is_instant": "目标必须是瞬间",
+    "target_is_instant_sorcery_or_enchantment": "目标必须是瞬间、法术或结界",
+    "target_is_legendary": "目标必须是传奇咒语",
+    "target_is_nonblack": "目标必须不是黑色",
+    "target_has_target": "目标咒语或异能本身必须有目标",
+    "returns_to_hand": "效果是弹回手牌而不是消灭或放逐"
+  },
+  "win_types": {
+    "oracle_consult": {
+      "label": "塔萨的先知/协商类",
+      "answered_by": [
+        { "family": "counter", "scope": "creature_spell" },
+        { "family": "counter", "scope": "instant_or_sorcery" },
+        { "family": "counter", "scope": "triggered_ability" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "special", "scope": "oracle_win_stop" },
+        { "family": "special", "scope": "lose_prevention" },
+        { "family": "special", "scope": "exile_stack" }
+      ]
+    },
+    "breach_graveyard": {
+      "label": "冥界裂隙/坟场类",
+      "answered_by": [
+        { "family": "counter", "scope": "noncreature_spell" },
+        { "family": "counter", "scope": "instant_or_sorcery" },
+        { "family": "remove", "scope": "enchantment" },
+        { "family": "graveyard_hate", "scope": "*" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "special", "scope": "exile_stack" }
+      ]
+    },
+    "spell_combo": {
+      "label": "咒语组合技",
+      "answered_by": [
+        { "family": "counter", "scope": "noncreature_spell" },
+        { "family": "counter", "scope": "instant_or_sorcery" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "redirect", "scope": "spell_with_target" },
+        { "family": "special", "scope": "exile_stack" }
+      ]
+    },
+    "artifact_loop": {
+      "label": "神器循环",
+      "answered_by": [
+        { "family": "counter", "scope": "noncreature_spell" },
+        { "family": "remove", "scope": "artifact" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "special", "scope": "exile_stack" }
+      ]
+    },
+    "creature_board": {
+      "label": "生物/场面制胜",
+      "answered_by": [
+        { "family": "counter", "scope": "creature_spell" },
+        { "family": "remove", "scope": "creature" },
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" },
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" },
+        { "family": "special", "scope": "lose_prevention" }
+      ]
+    },
+    "activated_combo": {
+      "label": "起动式异能组合技",
+      "answered_by": [
+        { "family": "counter", "scope": "activated_ability" },
+        { "family": "remove", "scope": "creature" },
+        { "family": "remove", "scope": "artifact" },
+        { "family": "redirect", "scope": "ability_with_target" }
+      ]
+    }
+  },
+  "cards": [
+    {
+      "name": "Force of Will",
+      "answers": [
+        { "family": "counter", "scope": "any_spell" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 3, "colors": ["U", "U"] },
+        { "mode": "pitch", "requires": ["blue_card_in_hand"], "life": 1 }
+      ],
+      "notes": "Pitch 条件只记录，是否计入由估算器决定。"
+    },
+    {
+      "name": "Force of Negation",
+      "answers": [
+        { "family": "counter", "scope": "noncreature_spell" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 1, "colors": ["U", "U"] },
+        { "mode": "pitch", "requires": ["blue_card_in_hand", "not_your_turn"] }
+      ],
+      "notes": "免费模式需要不是自己的回合。"
+    },
+    {
+      "name": "Fierce Guardianship",
+      "answers": [
+        { "family": "counter", "scope": "noncreature_spell" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 2, "colors": ["U"] },
+        { "mode": "free", "requires": ["commander_in_play"] }
+      ],
+      "notes": "主将在场时可免费施放。"
+    },
+    {
+      "name": "Pact of Negation",
+      "answers": [
+        { "family": "counter", "scope": "any_spell" }
+      ],
+      "cost_options": [
+        { "mode": "free" }
+      ],
+      "notes": "延迟支付费用暂不影响是否能当回合互动。"
+    },
+    {
+      "name": "Mental Misstep",
+      "answers": [
+        { "family": "counter", "scope": "any_spell", "limits": { "mana_value": 1 } }
+      ],
+      "cost_options": [
+        { "mode": "life_or_mana", "colors": ["U"], "life": 2 }
+      ],
+      "notes": "只反击法术力值为 1 的咒语。"
+    },
+    {
+      "name": "Swan Song",
+      "answers": [
+        { "family": "counter", "scope": "noncreature_spell", "constraints": ["target_is_instant_sorcery_or_enchantment"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Flusterstorm",
+      "answers": [
+        { "family": "counter", "scope": "instant_or_sorcery" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "An Offer You Can't Refuse",
+      "answers": [
+        { "family": "counter", "scope": "noncreature_spell" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Spell Pierce",
+      "answers": [
+        { "family": "counter", "scope": "noncreature_spell" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Dispel",
+      "answers": [
+        { "family": "counter", "scope": "instant_or_sorcery", "constraints": ["target_is_instant"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Delay",
+      "answers": [
+        { "family": "counter", "scope": "any_spell" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 1, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Mana Drain",
+      "answers": [
+        { "family": "counter", "scope": "any_spell" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U", "U"] }
+      ]
+    },
+    {
+      "name": "Deflecting Swat",
+      "answers": [
+        { "family": "redirect", "scope": "spell_with_target", "constraints": ["target_has_target"] },
+        { "family": "redirect", "scope": "ability_with_target", "constraints": ["target_has_target"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 2, "colors": ["R"] },
+        { "mode": "free", "requires": ["commander_in_play"] }
+      ]
+    },
+    {
+      "name": "Pyroblast",
+      "answers": [
+        { "family": "counter", "scope": "any_spell", "constraints": ["target_is_blue"] },
+        { "family": "remove", "scope": "permanent", "constraints": ["target_is_blue"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["R"] }
+      ]
+    },
+    {
+      "name": "Red Elemental Blast",
+      "answers": [
+        { "family": "counter", "scope": "any_spell", "constraints": ["target_is_blue"] },
+        { "family": "remove", "scope": "permanent", "constraints": ["target_is_blue"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["R"] }
+      ]
+    },
+    {
+      "name": "Misdirection",
+      "answers": [
+        { "family": "redirect", "scope": "spell_with_target", "constraints": ["target_has_target"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 3, "colors": ["U", "U"] },
+        { "mode": "pitch", "requires": ["blue_card_in_hand"] }
+      ]
+    },
+    {
+      "name": "Swords to Plowshares",
+      "answers": [
+        { "family": "remove", "scope": "creature" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["W"] }
+      ]
+    },
+    {
+      "name": "Path to Exile",
+      "answers": [
+        { "family": "remove", "scope": "creature" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["W"] }
+      ]
+    },
+    {
+      "name": "Pongify",
+      "answers": [
+        { "family": "remove", "scope": "creature" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Rapid Hybridization",
+      "answers": [
+        { "family": "remove", "scope": "creature" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Deadly Rollick",
+      "answers": [
+        { "family": "remove", "scope": "creature" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 3, "colors": ["B"] },
+        { "mode": "free", "requires": ["commander_in_play"] }
+      ]
+    },
+    {
+      "name": "Snuff Out",
+      "answers": [
+        { "family": "remove", "scope": "creature", "constraints": ["target_is_nonblack"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 3, "colors": ["B"] },
+        { "mode": "free", "requires": ["controls_swamp"], "life": 4 }
+      ]
+    },
+    {
+      "name": "Chain of Vapor",
+      "answers": [
+        { "family": "remove", "scope": "permanent", "constraints": ["returns_to_hand"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Abrupt Decay",
+      "answers": [
+        { "family": "remove", "scope": "nonland_permanent", "limits": { "max_mana_value": 3 } }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["B", "G"] }
+      ],
+      "notes": "不能被反击的性质暂不影响概率，只作为说明保留。"
+    },
+    {
+      "name": "Assassin's Trophy",
+      "answers": [
+        { "family": "remove", "scope": "permanent" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["B", "G"] }
+      ]
+    },
+    {
+      "name": "Nature's Claim",
+      "answers": [
+        { "family": "remove", "scope": "artifact_or_enchantment" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["G"] }
+      ]
+    },
+    {
+      "name": "Force of Vigor",
+      "answers": [
+        { "family": "remove", "scope": "artifact_or_enchantment" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 2, "colors": ["G", "G"] },
+        { "mode": "pitch", "requires": ["green_card_in_hand", "not_your_turn"] }
+      ]
+    },
+    {
+      "name": "Endurance",
+      "answers": [
+        { "family": "graveyard_hate", "scope": "shuffle_or_bottom" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 1, "colors": ["G", "G"] },
+        { "mode": "pitch", "requires": ["green_card_in_hand"] }
+      ]
+    },
+    {
+      "name": "Surgical Extraction",
+      "answers": [
+        { "family": "graveyard_hate", "scope": "target_card" }
+      ],
+      "cost_options": [
+        { "mode": "life_or_mana", "colors": ["B"], "life": 2 }
+      ]
+    },
+    {
+      "name": "Noxious Revival",
+      "answers": [
+        { "family": "graveyard_hate", "scope": "target_card" }
+      ],
+      "cost_options": [
+        { "mode": "life_or_mana", "colors": ["G"], "life": 2 }
+      ]
+    },
+    {
+      "name": "Faerie Macabre",
+      "answers": [
+        { "family": "graveyard_hate", "scope": "target_card" }
+      ],
+      "cost_options": [
+        { "mode": "free", "requires": ["discard_from_hand"] }
+      ]
+    },
+    {
+      "name": "Stifle",
+      "answers": [
+        { "family": "counter", "scope": "activated_ability" },
+        { "family": "counter", "scope": "triggered_ability" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Tale's End",
+      "answers": [
+        { "family": "counter", "scope": "activated_ability" },
+        { "family": "counter", "scope": "triggered_ability" },
+        { "family": "counter", "scope": "any_spell", "constraints": ["target_is_legendary"] }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 1, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Trickbind",
+      "answers": [
+        { "family": "counter", "scope": "activated_ability" },
+        { "family": "counter", "scope": "triggered_ability" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 1, "colors": ["U"] }
+      ]
+    },
+    {
+      "name": "Disallow",
+      "answers": [
+        { "family": "counter", "scope": "spell_or_ability" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 1, "colors": ["U", "U"] }
+      ]
+    },
+    {
+      "name": "Silence",
+      "answers": [
+        { "family": "prevent_casting", "scope": "opponents_spells_this_turn" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["W"] }
+      ]
+    },
+    {
+      "name": "Orim's Chant",
+      "answers": [
+        { "family": "prevent_casting", "scope": "target_player_spells_this_turn" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["W"] }
+      ]
+    },
+    {
+      "name": "Angel's Grace",
+      "answers": [
+        { "family": "special", "scope": "lose_prevention" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 0, "colors": ["W"] }
+      ]
+    },
+    {
+      "name": "Mindbreak Trap",
+      "answers": [
+        { "family": "special", "scope": "exile_stack" }
+      ],
+      "cost_options": [
+        { "mode": "mana", "generic": 2, "colors": ["U", "U"] },
+        { "mode": "free", "requires": ["opponent_cast_three_spells_this_turn"] }
+      ]
+    }
+  ]
+}
